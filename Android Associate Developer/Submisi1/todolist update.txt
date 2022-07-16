@@ -1,0 +1,40 @@
+Hello everyone, my name is Sthefen Renardi, ok I will answer these five questions:
+
+first question: What projects have you worked on?
+ here I made an application called ToDo.
+ToDo is an application that can record user activity and can remind users of the activities that they have been made.
+Here is a list of activities created by the user,
+the user can add their activity in-app and the activity will be saved.
+when the user enables notification in settings,
+A notification of the activity whose schedule is closest to the user's Android device will appear
+
+second question: Which part is the most difficult?
+ In my opinion, the tricky part is in the notification section.
+Regarding work managers, I don't understand how to work managers work,
+but I re-learn about work managers in Android Fundamentals. So that I can do well
+
+third question: What components have been used to display the task list?
+My answer: The Android component used is RecyclerView including the layout, 
+which is associated with an adapter that bridges between the UI component and 
+the data so that it can populate the data in the UI component
+
+fourth question: How do notification reminders work?
+ In the ui when user switch on notification it automatically create workmanager
+Theres WorkManager API to create scheduled notifications and delivered at a particular time. 
+Which Contain PeriodicWorkRequest because we want to show daily reminder and data which contain
+notifcation channel id and channelName.
+Outside of that Theres NotificationWorker class that would handle 
+all functionalities relating to notifications with the application.
+Then create notification object by using NotificationCompat.Builder and pass the notifcation channel id. 
+We also can add other configuration like icon, title, context, sound, and the pending intent which contain 
+NearestActiveTask and with this we want to open DetailTaskActivity went user click the notification.
+After that check if the user's phone is Android version Oreo and above because no need to create a 
+notification channel for older versions.
+Then create the notification using the NotifcationManagerCompat, 
+passing in the Notification channel ID and the notification Object.
+
+
+five questions: Why do we need Custom Views?
+  We need custom view to create view based on what we want and does not form part of the Android API, 
+for this project we want to add change color into red for task that has been exceeded and 
+strikethrough text for task that has been done.
